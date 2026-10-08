@@ -7,12 +7,13 @@ void printMatrix(int** matrix, unsigned int m, unsigned int n);
 int** transposeMatrix(int** matrix, unsigned int m, unsigned int n);
 int main(int argc, char *argv[])
 {
-	try(){
+	try{
 		unsigned int m = 0, n = 0;
 		std::cout << "Ввод количества строк, столбцов \n";
 		std::cin >> n >> m;
 		cleanup();
 		if(m==0||n==0){
+            std::cerr << "Bad input"<< "\n";
 			return 1;
 		}
 		std::cout << "Ввод матрицы \n";
@@ -39,7 +40,8 @@ int main(int argc, char *argv[])
 		std::cout << "\nТранспозированная: \n";
 		printMatrix(transposed,n,m);
 	}
-	catch(const bad_alloc& e){
+	catch(const std::bad_alloc& e){
+        std::cerr << e.what() << "\n";
 		return 2;
 	}
 }
