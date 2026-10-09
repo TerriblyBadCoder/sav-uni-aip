@@ -57,9 +57,7 @@ int** initMatrix(unsigned int m, unsigned int n){
 	return matrixed;
 }
 int** transposeMatrix(int** matrix, unsigned int m, unsigned int n){
-	int maximum = n;
-	if(m>n)maximum=m;
-	int** transposed = initMatrix(maximum,maximum);
+	int** transposed = initMatrix(n,m);
 	for(unsigned int j = 0;j<m;j++){
 		for(unsigned int i = 0; i < n; i++){
 			transposed[j][i]=matrix[i][j];
