@@ -49,7 +49,7 @@ int** initMatrix(unsigned int m, unsigned int n){
 	int** matrixed = (int**)malloc(n*sizeof(int*));
 	if(matrixed==nullptr){throw std::bad_alloc();}
 
-	for (unsigned int i = 0; i < m; ++i) {
+	for (unsigned int i = 0; i < n; ++i) {
         int* tempCheck = (int*)malloc(m * sizeof(int));
 		if(tempCheck==nullptr){throw std::bad_alloc();}
 		matrixed[i]=tempCheck;
