@@ -35,6 +35,7 @@ int** initMatrix(size_t n, size_t m){
 	return matrixed;
 }
 int** inputMatrix(size_t* n,size_t* m){
+	std::cout << "Ввод размера \n";
     std::cin >> *n >> *m;
     cleanup();
 	if(*m==0||*n==0){
